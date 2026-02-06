@@ -1,24 +1,18 @@
 class Solution {
     public int maxProduct(int[] nums) {
-        int currMax = nums[0];
-        int currMin = nums[0];
-        int result = nums[0];
+        int n=nums.length;
+        int leftproduct = 1;
+        int rightproduct = 1;
+        int maxproduct = nums[0];
 
-        for (int i = 1; i < nums.length; i++) {
-            int num = nums[i];
+        for (int i = 0; i < nums.length; i++) {
+            leftproduct=leftproduct==0?1:leftproduct;
+            rightproduct=rightproduct==0?1:rightproduct;
+            leftproduct = leftproduct*nums[i];
+            rightproduct = rightproduct*nums[n-i-1];
 
-            if (num < 0) {
-                int temp = currMax;
-                currMax = currMin;
-                currMin = temp;
-            }
-
-            currMax = Math.max(num, currMax * num);
-            currMin = Math.min(num, currMin * num);
-
-            result = Math.max(result, currMax);
+           maxproduct=Math.max(maxproduct,Math.max(leftproduct,rightproduct));
         }
-
-        return result;
+        return maxproduct;
     }
 }
