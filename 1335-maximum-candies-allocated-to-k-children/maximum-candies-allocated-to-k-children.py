@@ -19,5 +19,5 @@ class Solution(object):
             else:
                 right = mid - 1  # Try a smaller size
 
-        return 0;
+        return best
 
