@@ -9,7 +9,6 @@ class Solution:
                 row[i][j + 1] = row[i][j] + grid[i][j]
                 col[i + 1][j] = col[i][j] + grid[i][j]
 
-
         def isMagic(r, c, k):
             target = row[r][c + k] - row[r][c]
 
