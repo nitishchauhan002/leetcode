@@ -8,9 +8,7 @@
 <strong>Output:</strong> 2
 <strong>Explanation:</strong> The maximum side length of square with sum less than 4 is 2 as shown.
 </pre>
-
 <p><strong class="example">Example 2:</strong></p>
-
 <pre>
 <strong>Input:</strong> mat = [[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2]], threshold = 1
 <strong>Output:</strong> 0
