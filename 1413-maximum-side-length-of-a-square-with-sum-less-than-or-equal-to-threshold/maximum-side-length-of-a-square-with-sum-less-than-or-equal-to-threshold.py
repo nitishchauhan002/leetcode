@@ -13,7 +13,6 @@ class Solution:
                     + ps[i + 1][j]
                     - ps[i][j]
                 )
-
         # Check if there exists a k x k square with sum <= threshold
         def can(k):
             for i in range(m - k + 1):
