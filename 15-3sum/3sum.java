@@ -9,14 +9,15 @@ class Solution {
         // Step 1: Sort the array
         Arrays.sort(nums);
         
-        // Step 2: Iterate through the array with an anchor
+        // Step 2: Iterate through the array
         for (int i = 0; i < nums.length - 2; i++) {
-            // Optimization: If the smallest number is greater than 0, no sum can be 0
+            // Optimization: Since the array is sorted, if the first number is > 0, 
+            // the sum can never be 0.
             if (nums[i] > 0) {
                 break;
             }
             
-            // Skip duplicates for the anchor element
+            // Skip duplicate elements for the first number
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
@@ -31,11 +32,10 @@ class Solution {
                 if (sum == 0) {
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     
-                    // Skip duplicates for the left pointer
+                    // Skip duplicates for the second and third numbers
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }
-                    // Skip duplicates for the right pointer
                     while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
